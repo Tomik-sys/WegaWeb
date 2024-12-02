@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-lang="title">Tomáš Paulisko</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/logo_title.png" sizes="48x48">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="diplayLogoMeno">
+      <img class="logo" src="img/logo.png" alt="Logo">
+      <div class="MenoNavbar" data-lang="name">Tomáš Paulisko</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" data-lang="home">Domov</a></li>
+      <li><a href="OMne.html" data-lang="about">O mne</a></li>
+      <li><a href="Kontakt.html" data-lang="contact">Kontakt</a></li>
+      <li><a href="projekty.html" data-lang="projects">Projekty</a></li>
+      <li class="language-flags">
+        <img src="img/sk.png" alt="Slovenská vlajka" id="slovak-flag">
+        <img src="img/anglicko.svg" alt="Anglická vlajka" id="english-flag">
+      </li>
+    </ul>
+  </nav>
+
+  <div class="vertical-menu">
+    <section class="vertical-menu-prvky">
+      <a href="#iframe-section">
+        <img src="img/weblogo.png" alt="Ikona webu">
+        <span data-lang="web">Webové stránky</span>
+      </a>
+      <a href="#praca">
+        <img src="img/praca.png" alt="Ikona AI">
+        <span data-lang="work">Práca</span>
+      </a>
+      <a href="#skolske-uloha">
+        <img src="img/algoritmy.png" alt="Ikona algoritmov">
+        <span data-lang="school">Školské úlohy</span>
+      </a>
+    </section>
+  </div>
+
+  <section id="iframe-section" class="projekty_praca">
+    <h2 class="popis-web-projekt" data-lang="iframe-header">Stránka na ktorej som spolupracoval</h2>
+    <iframe src="https://kendmall.com/index.php" width="100%" height="600"></iframe>
+  </section>
+
+  <section class="projekty_praca" id="praca">
+    <h2 class="popis-web-projekt" data-lang="work-header">V práci vyučujem AI pomocou pythonu a robil som napríklad na takomto programe</h2>
+    <img class="pracaAI" src="img/pracaUkazka.png" alt="Clusterovanie dát na mape">
+    <div class="Popis-kod" data-lang="work-code-desc">Pre zobrazenie popisu obrázka a kódu klikni na obrázok.</div>
+    <div class="code-container" id="code-container-praca" style="display: none;">
+      <p class="popisVysvetlenie" data-lang="work-img-desc"><strong>Popis obrázka:</strong> Clusterovanie dát pomocou hustoty, clustery sme vyobrazili na mape.</p>
+      <pre>
+        import pandas as pd
+        import numpy as np
+        import matplotlib.pyplot as plt
+        import folium
+        import geopy
+        from sklearn import preprocessing, cluster
+        import scipy
+        import seaborn as sns
+        
+        # Načítanie dát
+        dtf = pd.read_csv("directory.csv")
+        dtf = dtf[dtf["City"]=="Dubai"]
+        dtf = dtf[["City","Street Address","Longitude","Latitude"]]
+        
+        # Generovanie náhodných dát pre príklad
+        dtf["Potential"] = np.random.randint(low=3, high=11, size=len(dtf))
+        dtf["Staff"] = dtf["Potential"].apply(lambda x: int(np.random.rand()*x)+1)
+        dtf["Capacity"] = dtf["Potential"] - dtf["Staff"]
+        dtf["Cost"] = np.random.choice(["high","medium","low"], size=len(dtf), p=[0.4,0.5,0.1])
+        
+        # Získanie GPS súradníc pre mesto
+        city = "Dubai"
+        locator = geopy.geocoders.Nominatim(user_agent="MyCoder")
+        location = locator.geocode(city)
+        location = [location.latitude, location.longitude]
+        
+        # Priradenie farieb podľa nákladov
+        colors = []
+        for i in dtf["Cost"]:
+          if(i == "high"):
+            colors.append("red")
+          if(i == "medium"):
+            colors.append("orange")
+          if(i == "low"):
+            colors.append("green")
+        dtf["color"] = colors
+        
+        # Inicializácia mapy
+        maps = folium.Map(location=location, tiles="cartodb positron")
+        
+        # Pridanie bodov na mapu
+        dtf.apply(lambda row: folium.CircleMarker(
+                   location=[row["Latitude"],row["Longitude"]], popup=row["Street Address"],
+                   color=row["color"], fill=True,
+                   radius=row["Staff"]).add_to(maps), axis=1)
+        
+        # Zobrazenie mapy
+        maps
+      </pre>
+    </div>
+  </section>
+
+  <section class="projekty_praca" id="skolske-uloha">
+    <h2 class="popis-web-projekt" data-lang="school-header">Školské úlohy</h2>
+    <img class="skolaAI" src="img/skolapriklad.png" alt="Školský projekt príklad">
+    <div class="Popis-kod" data-lang="school-code-desc">Pre zobrazenie kódu a vysvetlenia kódu klikni na obrázok.</div>
+    <div class="code-container" id="code-container-skola" style="display: none;">
+      <pre>
+        #include <iostream>
+            #include <vector>
+            using namespace std;
+            
+            int main() {
+                // Počet obdĺžnikov na vstupe
+                int number_of_rectangles;
+                cin >> number_of_rectangles;
+            
+                // Načítanie výšok obdĺžnikov do vektora
+                vector<int> length_rectangle(number_of_rectangles);
+                for (int i = 0; i < number_of_rectangles; ++i) {
+                    cin >> length_rectangle[i];
+                }
+            
+                // Premenná pre maximálnu plochu
+                int max_area = 0;
+            
+                // Iterácia cez všetky obdĺžniky
+                for (int i = 0; i < number_of_rectangles; ++i) {
+                    int min_height = length_rectangle[i]; // Aktuálna minimálna výška
+                    // Ak je teoretická plocha menšia než max_area, pokračujeme
+                    if (min_height * (number_of_rectangles - i) <= max_area) {
+                        continue;
+                    }
+            
+                    // Iterácia cez nasledujúce obdĺžniky
+                    for (int j = i; j < number_of_rectangles; ++j) {
+                        if (min_height > length_rectangle[j]) {
+                            min_height = length_rectangle[j]; // Aktualizujeme minimálnu výšku
+                        }
+                        if (min_height == 0) {
+                            break; // Ak je výška 0, skončíme
+                        }
+                        int area = min_height * (j - i + 1); // Výpočet plochy
+                        if (area > max_area) {
+                            max_area = area; // Aktualizácia maximálnej plochy
+                        }
+                    }
+                }
+            
+                cout << max_area << endl; // Výstup maximálnej plochy
+            
+                return 0;
+            }
+      </pre>
+    </div>
+  </section>
+
+  <footer>
+    <a href="OMne.html" data-lang="footer">Tomáš Paulisko</a>
+  </footer>
+
+  <script>
+    const translations = {
+      sk: {
+        title: "Tomáš Paulisko",
+        name: "Tomáš Paulisko",
+        home: "Domov",
+        about: "O mne",
+        contact: "Kontakt",
+        projects: "Projekty",
+        web: "Webové stránky",
+        work: "Práca",
+        school: "Školské úlohy",
+        "iframe-header": "Stránka na ktorej som spolupracoval",
+        "work-header": "V práci vyučujem AI pomocou pythonu a robil som napríklad na takomto programe",
+        "work-code-desc": "Pre zobrazenie popisu obrázka a kódu klikni na obrázok.",
+        "work-img-desc": "Clusterovanie dát pomocou hustoty, clustery sme vyobrazili na mape.",
+        "school-header": "Školské úlohy",
+        "school-code-desc": "Pre zobrazenie kódu a vysvetlenia kódu klikni na obrázok.",
+        footer: "Tomáš Paulisko"
+      },
+      en: {
+        title: "Tomáš Paulisko",
+        name: "Tomáš Paulisko",
+        home: "Home",
+        about: "About Me",
+        contact: "Contact",
+        projects: "Projects",
+        web: "Web Pages",
+        work: "Work",
+        school: "School Assignments",
+        "iframe-header": "Website I collaborated on",
+        "work-header": "At work, I teach AI using Python and worked on this project",
+        "work-code-desc": "Click the image to view the description and code.",
+        "work-img-desc": "Clustering data by density, clusters were visualized on a map.",
+        "school-header": "School Assignments",
+        "school-code-desc": "Click the image to view the code and its explanation.",
+        footer: "Tomáš Paulisko"
+      }
+    };
+
+    function switchLanguage(lang) {
+      document.querySelectorAll("[data-lang]").forEach((element) => {
+        const key = element.getAttribute("data-lang");
+        if (translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    document.getElementById("slovak-flag").addEventListener("click", () => {
+      switchLanguage("sk");
+    });
+
+    document.getElementById("english-flag").addEventListener("click", () => {
+      switchLanguage("en");
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const pracaAI = document.querySelector('.pracaAI');
+    const codeContainerPraca = document.getElementById('code-container-praca');
+
+    if (pracaAI && codeContainerPraca) {
+        pracaAI.addEventListener('click', () => {
+            codeContainerPraca.style.display =
+                codeContainerPraca.style.display === 'block' ? 'none' : 'block';
+        });
+    }
+
+    const skolaAI = document.querySelector('.skolaAI');
+    const codeContainerSkola = document.getElementById('code-container-skola');
+
+    if (skolaAI && codeContainerSkola) {
+        skolaAI.addEventListener('click', () => {
+            codeContainerSkola.style.display =
+                codeContainerSkola.style.display === 'block' ? 'none' : 'block';
+        });
+    }
+});
+
+  </script>
+</body>
+</html>

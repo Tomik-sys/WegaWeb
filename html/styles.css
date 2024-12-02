@@ -1,0 +1,331 @@
+/* Globálne štýly */
+@font-face {
+  font-family: 'Antipasto';
+  src: url('https://files.1001fonts.com/s/antipasto-pro-bold-regular.ttf') format('truetype');
+}
+
+body {
+  color: white;
+  margin: 0;
+  background-color: #003366;
+}
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .diplayLogoMeno
+  {
+    font-weight: 600;
+    display: flex;
+    justify-items: center;
+    gap:20px;
+    align-items: center;
+  }
+
+  .navbar {
+    text-shadow: 2px 2px 0px #002244, 
+    -2px 2px 0px #002244, 
+    2px -2px 0px #002244, 
+    -2px -2px 0px #002244; 
+    background: #003366;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .MenoNavbar
+  {
+    font-size: 3vw;
+    color: #7be2d1;
+  }
+  
+  .logo {
+    width: 85px;
+    
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    font-size: 2em;
+    color: #7be2d1;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    text-decoration: underline;
+    color: white;
+  }
+  
+  
+  .banner-content h1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .banner-content
+  {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+  .banner
+  {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+  
+  .info
+  {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-weight: 500;
+    font-size: 1.5vw;
+  }
+
+
+  .projekty_praca
+  {
+    margin-top: 30px;
+  }
+  iframe
+  {
+    border: 3px black solid;
+    background-color: white;
+    width: 100%; 
+    height: 600px;
+  }
+
+   .vertical-menu {
+    width: 200px;
+    position: fixed;
+    top: 80px; 
+    left: 0;
+    background-color: #003366;
+    padding: 20px;
+    height: calc(100% - 80px); 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .vertical-menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #7be2d1;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+  }
+
+  .vertical-menu a:hover {
+    color: #99f3e2;
+  }
+
+  .vertical-menu img {
+    width: 120px;
+  }
+
+  .projekty_praca {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  .vertical-menu-prvky
+  {
+    margin-top: 20%;
+  }
+
+  .popis-web-projekt
+  {
+    text-align: center;
+  }
+
+  .pracaAI
+  {
+    width: 100%;
+  }
+
+
+
+     .code-container {
+      display: none; 
+      margin-top: 20px;
+      background: #f4f4f4;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    .code-container pre {
+      font-family: "Courier New", Courier, monospace;
+      white-space: pre-wrap; 
+      color: #333;
+    }
+
+
+    img.pracaAI {
+      cursor: pointer;
+      max-width: 100%;
+      border: 3px solid black;
+    }
+
+
+    .popisVysvetlenie
+    {
+      color:black;
+    }
+
+    .skolaAI
+    {
+      max-width: 100%;
+      width: 100%;
+      border: 3px solid black;
+    }
+
+    .contact-section {
+      color: white;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    max-width: 600px;
+    font-family: Arial, sans-serif;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .kontaktObrazky
+  {
+    width: 40px;
+  }
+  .kontaktObrazky2
+  {
+    width: 80px;
+  }
+
+  .contact-item a {
+    text-decoration: none;
+    color: white; 
+    font-weight: bold;
+  }
+
+  .contact-item span {
+      color: white;      
+      font-size: 16px;
+  }
+
+  .section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .section-text {
+    flex: 1;
+    padding-right: 20px;
+  }
+  .section img {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .section h2 {
+    color: white;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  .section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  } 
+
+   footer {
+      background-color: #003366;
+      color: #7be2d1;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+    footer a {
+      text-decoration: none;
+      color: #7be2d1;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .section-text {
+      flex: 1;
+      padding-right: 20px;
+    }
+    .section img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .section h2 {
+      color: white;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .section p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .language-flags {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .language-flags img {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }

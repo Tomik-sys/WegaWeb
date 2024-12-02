@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-lang="title">Tomáš Paulisko</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/logo_title.png" sizes="48x48">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="diplayLogoMeno">
+      <img class="logo" src="img/logo.png" alt="Logo">
+      <div class="MenoNavbar" data-lang="name">Tomáš Paulisko</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" data-lang="home">Domov</a></li>
+      <li><a href="OMne.html" data-lang="about">O mne</a></li>
+      <li><a href="Kontakt.html" data-lang="contact">Kontakt</a></li>
+      <li><a href="projekty.html" data-lang="projects">Projekty</a></li>
+      <li class="language-flags">
+        <img src="img/sk.png" alt="Slovenská vlajka" id="slovak-flag">
+        <img src="img/anglicko.svg" alt="Anglická vlajka" id="english-flag">
+      </li>
+    </ul>
+  </nav>
+
+  <section class="banner-content">
+    <h1 data-lang="about-me">O mne</h1>
+
+    <section class="section">
+      <div class="section-text">
+        <h2 data-lang="passion">Moja vášeň pre informatiku</h2>
+        <p data-lang="passion-text">Mojím koníčkom v poslednej dobe je programovanie webových stránok. Rád sa hrám s dizajnom. Napriek tomu stále neodmietnem aj algoritmicky náročne úlohy ktoré má baví programovať.</p>
+      </div>
+      <img src="img/ilustracia.jpg" alt="Ilustrácia programovania">
+    </section>
+
+    <section class="section">
+      <div class="section-text">
+        <h2 data-lang="this-is-me">Toto som ja</h2>
+        <p data-lang="this-is-me-text">Som pracovitý človek, ktorý vždy dotiahne veci do konca. Takmer nikdy sa nevzdávam, mám rád výzvy, varenie a vo voľnom čase si rád zahrám florbal.</p>
+      </div>
+      <img src="img/ilustraciaToSomJa.jpg" alt="Ilustrácia osobných záujmov">
+    </section>
+
+    <section class="section">
+      <div class="section-text">
+        <h2 data-lang="resume">Stiahnite si môj životopis</h2>
+        <p data-lang="resume-text">Ak by vás zaujímali podrobnosti o mojej práci a skúsenostiach, môžete si stiahnuť môj životopis kliknutím na tlačidlo nižšie.</p>
+        <a href="docs/životopis.pdf" download class="download-button" data-lang="download-button">Stiahnuť životopis</a>
+      </div>
+    </section>
+  </section>
+
+  <footer>
+    <a href="OMne.html" data-lang="footer">Tomáš Paulisko</a>
+  </footer>
+
+  <script>
+    const translations = {
+      sk: {
+        title: "Tomáš Paulisko",
+        name: "Tomáš Paulisko",
+        home: "Domov",
+        about: "O mne",
+        contact: "Kontakt",
+        projects: "Projekty",
+        "about-me": "O mne",
+        passion: "Moja vášeň pre informatiku",
+        "passion-text": "Mojím koníčkom v poslednej dobe je programovanie webových stránok. Rád sa hrám s dizajnom. Napriek tomu stále neodmietnem aj algoritmicky náročne úlohy ktoré má baví programovať.",
+        "this-is-me": "Toto som ja",
+        "this-is-me-text": "Som pracovitý človek, ktorý vždy dotiahne veci do konca. Takmer nikdy sa nevzdávam, mám rád výzvy, varenie a vo voľnom čase si rád zahrám florbal.",
+        resume: "Stiahnite si môj životopis",
+        "resume-text": "Ak by vás zaujímali podrobnosti o mojej práci a skúsenostiach, môžete si stiahnuť môj životopis kliknutím na tlačidlo nižšie.",
+        "download-button": "Stiahnuť životopis",
+        footer: "Tomáš Paulisko"
+      },
+      en: {
+        title: "Tomáš Paulisko",
+        name: "Tomáš Paulisko",
+        home: "Home",
+        about: "About Me",
+        contact: "Contact",
+        projects: "Projects",
+        "about-me": "About Me",
+        passion: "My Passion for IT",
+        "passion-text": "My recent hobby is programming websites. I enjoy playing with design, but I also embrace algorithmically challenging tasks that I love to code.",
+        "this-is-me": "This is Me",
+        "this-is-me-text": "I am a hardworking person who always finishes what I start. I rarely give up, I enjoy challenges, cooking, and in my free time, I like to play floorball.",
+        resume: "Download My Resume",
+        "resume-text": "If you are interested in details about my work and experience, you can download my resume by clicking the button below.",
+        "download-button": "Download Resume",
+        footer: "Tomáš Paulisko"
+      }
+    };
+
+    function switchLanguage(lang) {
+      document.querySelectorAll("[data-lang]").forEach((element) => {
+        const key = element.getAttribute("data-lang");
+        if (translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    document.getElementById("slovak-flag").addEventListener("click", () => {
+      switchLanguage("sk");
+    });
+
+    document.getElementById("english-flag").addEventListener("click", () => {
+      switchLanguage("en");
+    });
+  </script>
+</body>
+</html>
