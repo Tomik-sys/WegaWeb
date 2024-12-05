@@ -1,6 +1,6 @@
-# Tomáš Paulisko - Osobná Webová Stránka
+Osobná Webová Stránka
 
-Toto je moja osobná webová stránka. Webová stránka obsahuje informácie o mne, mojich projektoch, kontaktné údaje a možnosť stiahnuť môj životopis teda slúži ako portfólio. Webová stránka je lokalizovaná v dvoch jazykoch: slovenčine a angličtine.
+Toto je moja osobná webová stránka. Webová stránka obsahuje informácie o mne, mojich projektoch, kontaktné údaje a možnosť stiahnuť môj životopis. Webová stránka je lokalizovaná v dvoch jazykoch: slovenčine a angličtine.
 
 ---
 
@@ -26,28 +26,24 @@ project/
 │   ├── anglicko.svg       # Vlajka Anglicka (na prepínanie jazyka)
 ├── docs/                  # Priečinok pre dokumenty
 │   └── zivotopis.pdf      # Životopis na stiahnutie
-├── scripts/               # Priečinok pre JavaScript súbory
-│   ├── main.js            # Hlavný JavaScript súbor
-│   └── translations.js    # Súbor na prepínanie jazykov
-├── assets/                # Ďalšie zdroje (napr. ikony, favicon)
-│   └── favicon.ico        # Ikona stránky
 ├── README.md              # Dokumentácia projektu
 
 
 ## Funkcie
 
-### 1. Lokalizácia
+1. Lokalizácia
 Stránka obsahuje jazykové prepínanie medzi slovenčinou a angličtinou. Prepínanie sa realizuje kliknutím na vlajky v navigačnom paneli.
 
-### 2. Kontakt
+2. Kontakt
 Stránka obsahuje kontaktné informácie:
 - Email
 - Telefón
 - Odkaz na LinkedIn
 
-### 3. Projekty
+3. Projekty
 Stránka obsahuje kódy od projektov na ktorých som pracoval, respektíve ktoré som vytváral.
 
+###  Použitie
 1. **Klonovanie projektu:**
 
    Skopírujte projekt do svojho lokálneho zariadenia pomocou príkazu:
