@@ -49,7 +49,7 @@ Stránka obsahuje kódy od projektov na ktorých som pracoval, respektíve ktor�
    Skopírujte projekt do svojho lokálneho zariadenia pomocou príkazu:
 
    ```bash
-   git clone https://github.com/tvoj-repo/webstranka.git
+   git clone https://github.com/Tomik-sys/WegaWeb
 
 2. Otvorte priečinok v IDE.
 
